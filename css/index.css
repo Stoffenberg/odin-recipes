@@ -1,0 +1,262 @@
+html {
+    min-height: 100%;
+    background: linear-gradient(180deg, rgb(136, 182, 97), rgb(21, 113, 21));
+}
+
+body {
+    display: grid;                         /* element will use CSS Grid Layout to arrange its child elements */
+    grid-template-columns: 30% 40% 30%;    /* body element will be divided into three columns with widths of 30%, 40%, and 30%, respectively */
+    position: relative;                    /* body element will be positioned relative to its normal position in the document */
+    margin: 0px;                           /* there will be no margin around the body element */
+    height: 100vh;                         /* height of the body element will be equal to the height of the viewport, which is the visible area of the web page */
+    box-sizing: border-box;                /* width and height of the body element will include the padding and border of the element, rather than just the content area */
+}
+
+#middle {
+    display: inline-table;                 /* #middle element will behave like a table element, but will be displayed inline, just like a regular inline element */
+    text-align: center;                    /* any text content inside the #middle element will be centered horizontally */
+    position: relative;                    /* any child elements inside the #middle element that have absolute positioning will be positioned relative to the #middle element */
+    transform: translateY(-1.7vw);         /* #middle element will be moved vertically by a distance of -1.7vw (viewport width), which effectively moves the element upwards */
+}
+
+#header {
+    position: relative;
+}
+
+#title {
+    position: relative;                    /* any child elements inside the #title element that have absolute positioning will be positioned relative to the #title element */
+    font-family: "Sedgwick";               
+    letter-spacing: 0.04em;                /* there will be a small space between each letter in the text content of the #title element */
+    text-transform: uppercase;             
+    margin-bottom: -5px;                   /* there will be a negative margin of 5 pixels at the bottom of the #title element */
+    font-size: 3vw;                        /*  !!! #title element will be 5% of the viewport width */
+    text-align: center;
+    color: rgb(95, 106, 88);
+    bottom: 2vw;                           /* #title element will be positioned 2% of the viewport width above the bottom edge of its containing element */
+    margin-top: 4vw;                       /* !!! */
+    opacity: 0;
+    animation: intro 2s forwards;
+}
+
+#underline {
+    display: block;                        /* #underline element will be displayed as a block-level element, taking up the full width available in its containing element */
+    margin: 0 auto;                        /* #underline element will be horizontally centered within its containing element, with no top or bottom margin */
+    width: 50%;                            /* !!! */
+    filter: invert(100%);                  /* colors of the content inside the #underline element will be inverted, effectively making them appear as their complementary colors */
+    opacity: 0;
+    animation: fadeIn 1s forwards;         /* animation called "fadeIn" will be applied to the #underline element for a duration of 1 second, and the final state of the animation will be retained */
+    animation-delay: 2s;                   /* #underline element will wait for 2 seconds before the fadeIn animation is triggered */
+}
+
+#gifContainer {
+    position: relative;                    /* #gifContainer element will be positioned relative to its containing element */
+    display: inline-block;                 /* #gifContainer element will be displayed inline, but will also be treated as a block-level element, allowing other elements to be displayed next to it */
+    box-sizing: border-box;                /* #gifContainer element's total width and height will include any border or padding that is applied to it */
+    margin-top: 2em;                       /* !!! */
+    border: 7px whitesmoke double;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 2.3s;
+    box-shadow: 0 0 2vw black;           /* #gifContainer element will have a black box shadow with a spread radius of 2vw */
+}
+
+#gif {
+    margin-bottom: -0.5px;
+    display: block;                        /* block-level element, which means it takes up the full width of its container and starts on a new line */       
+    width: 15vw;                           /* !!! element will be sized relative to the size of the browser window */
+}
+
+#cooking {
+    font-size: 1vw;
+    margin-top: 0.3em;
+    display: block;                        /* sets the element to be a block-level element, which means it takes up the full width of its container and starts on a new line */
+    text-decoration: none;
+    color: white;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 2.3s;
+}
+
+#cooking:hover {
+    color: rgb(187, 187, 187);
+}
+
+#descriptionContainer {
+    position: absolute;                    /* it is positioned relative to the nearest positioned ancestor (in this case, the parent element), rather than to the normal flow of the page */
+    border: 0.25vw dotted goldenrod;
+    border-radius: 1em;                    /* rounds the corners of the border with a radius of 1em */
+    display: flex;                         /* a flex container, which means it can be used to create flexible layouts */
+    align-items: center;
+    justify-content: center;               /* enters the items along the horizontal axis of the flex container */
+    flex-direction: column;                /* sets the direction of the flex container to be column, which means the items will be stacked vertically */
+    bottom: 2%;                            /* positions the element 2% from the bottom of its container */
+    right: 50%;                            /* positions the element 50% from the right edge of its container */
+    transform: translate(50%);             /* moves the element horizontally by 50% of its own width, which centers it horizontally in its container */
+    width: 60%;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    animation-delay: 2.6s;
+}
+
+#projectBy {
+    display: block;                        /* will take up the full width of its container and create a new line after it */
+    color: white;                        
+    font-size: 1vw;                        /* sets the font size of the element to be 1% of the viewport width */
+    margin-top: 0.5vw;                     /* sets the top margin of the element to be 0.5% of the viewport width */
+}
+
+#TOP {
+    margin: 0.5vw 0;                       /* sets the top and bottom margin of the element to be 0.5% of the viewport width, and the left and right margins to be 0 */
+    width: 17vw;                           /* sets the width of the element to be 17% of the viewport width */
+    display: block;                        /* sets the element to be a block-level element, meaning it will take up the full width of its container and create a new line after it */
+    transform: translateX(1.5%);           /* applies a transformation to the element, translating it horizontally by 1.5% of its own width to the right. This effectively positions the element slightly to the right of its original position */
+}
+
+#left {
+    display: flex;                         /* direct children of this element can be arranged using flexible layouts */
+    flex-direction: column;                /* sets the main axis of the flex container to be vertical, so that the children of this element are arranged vertically, from top to bottom */
+    justify-content: space-around;         /* sets the vertical alignment of the children within the container to be evenly distributed, with equal space between them */
+}
+
+#topLeft, #bottomLeft {
+    margin: 0 auto;                        /* centers the element horizontally within its parent container */
+    display: flex;                         /* sets the element to be a flex container */
+    align-items: center;                   /* centers the flex items vertically within the container */
+    justify-content: center;               /* centers the flex items horizontally within the container */
+    transition: 0.5em;                     /* sets the transition duration to half a second */
+    pointer-events: none;                  /* disables pointer events on the element, which means that it cannot be clicked or hovered over */
+    left: -30vw;                           /* sets the initial left position of the element to be 30% to the left of the viewport */
+    position: relative;                    /* sets the position of the element to be relative, which means that it will be positioned relative to its normal position */
+    opacity: 0;
+    animation: leftSlide 2s forwards;
+    animation-delay: 2.8s;
+}
+
+#topLeft:hover, #bottomLeft:hover, #topRight:hover, #bottomRight:hover {
+    transform:scale(1.06)                  /* value of 1 represents the original size, while a value greater than 1 will scale the element up, and a value less than 1 will scale it down */
+}
+
+#topLeftFrame, #bottomLeftFrame, #topRightFrame, #bottomRightFrame {
+    width: 22vw;                           /* sets the width of each frame to 22% of the viewport width, where vw is a unit that represents 1% of the viewport width */
+    filter: hue-rotate(0deg) saturate(0);  /* applies a filter effect to each frame. The hue-rotate() function rotates the hues of the colors in the image by a given degree, in this case, 0deg, which means no rotation. The saturate() function desaturates the image by a given percentage, in this case, 0, which means no desaturation. As a result, the frames appear with their original colors */
+    display: block;                        /* sets the display property of each frame to block, which makes them behave like block-level elements and take up the full width of their parent container */
+    z-index: 2;                            /* sets the z-index property of each frame to 2, which places them on top of other elements with a lower z-index value. This is useful when elements overlap each other, and we want to control which element appears on top */
+}
+
+#topLeft:hover > #topLeftFrame, #bottomLeft:hover > #bottomLeftFrame, #topRight:hover > #topRightFrame, #bottomRight:hover > #bottomRightFrame { /* elements are nested inside four other elements: #topLeft, #bottomLeft, #topRight, and #bottomRight, respectively, which are themselves being targeted by the :hover pseudo-class */
+    transition: 0.75s;                     /* when one of these four elements is being hovered over by the user, the CSS rule applies a transition effect and a new filter to the corresponding frame element */
+    filter: hue-rotate(-15deg) saturate(2); /* hue-rotate function adjusts the hue of the image by rotating the color wheel by the specified angle. A negative value shifts the colors counterclockwise, and a positive value shifts them clockwise. The saturate function adjusts the saturation level of the image. A value of 1 indicates no change in saturation, and a value greater than 1 increases the saturation level */
+}
+
+#topLeftRecipe, #bottomLeftRecipe, #topRightRecipe, #bottomRightRecipe {
+    position: absolute;                    /* sets the position of the elements relative to their nearest positioned ancestor, which in this case is likely the #left element (or another containing element). It allows the images to be positioned precisely using the top, bottom, left, and right properties */
+    width: 18vw;                           /* sets the width of the elements to 18% of the viewport width, which allows them to be responsive and scale with the size of the screen */
+    height: 18vw;                          /* sets the height of the elements to 18% of the viewport width as well, creating a square shape */
+    display: inline;                       /* allows the images to appear side-by-side */
+    object-fit: cover;                     /* sets how the image should be resized to fit the dimensions of the element. The cover value means the image will be resized proportionally to completely cover the entire element, potentially cropping parts of the image */
+    pointer-events: auto;                  /* allows the images to respond to pointer events such as mouse clicks or touch events */
+    box-shadow: 0 0 2vw white;           /* creates a white box shadow around the images, adding a subtle visual effect. The 2vw value sets the size of the shadow to 2% of the viewport width */
+}
+
+#topLeft:hover > #topLeftRecipe, #bottomLeft:hover > #bottomLeftRecipe, #topRight:hover > #topRightRecipe, #bottomRight:hover > #bottomRightRecipe { /* states that when the user hovers over the #topLeft, #bottomLeft, #topRight, or #bottomRight elements, the box-shadow of the corresponding recipe element should change */
+    box-shadow:  0 0 4vw white;          /* shadow will have zero horizontal offset, zero vertical offset, a blur radius of 4vw, and a white color */
+    transition-duration: 1s;               
+}
+
+#topLeftOverlay, #bottomLeftOverlay, #topRightOverlay, #bottomRightOverlay {
+    position: absolute;                    /* positions the elements absolutely within their parent container, allowing for more precise placement */
+    width: 18vw;    
+    height: 18vw;
+    background: rgba(0, 0, 0, 0);
+    color: #ffffff;
+    display: flex;                         /* set the display to flex, align the items and justify their content to the center, and specify a column direction for the flex container */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Nova";
+    opacity: 0;
+    transition: 0.75s;
+    pointer-events: auto;                  /* allows pointer events to occur on the elements, such as clicks or hovers */
+    text-decoration: none;                 /* removes any default text decoration such as underlining */
+}
+
+#topLeftOverlay > *, #bottomLeftOverlay > *, #topRightOverlay > *, #bottomRightOverlay > * { /* > sign is a CSS selector that targets all direct children of a specified parent element */
+    transform: translateY(1.5vw);          /* used to move the elements vertically by 1.5vw */
+    transition: transform 0.5s;            /* define the duration and timing function of a transition effect when a property changes its value */
+}
+
+#topLeftOverlay:hover, #bottomLeftOverlay:hover, #topRightOverlay:hover, #bottomRightOverlay:hover {
+    opacity: 1;                            /* makes the element fully visible */
+    background: rgba(0, 0, 0, 0.65);
+}
+
+#topLeftOverlay:hover > *, #bottomLeftOverlay:hover > *, #topRightOverlay:hover > *, #bottomRightOverlay:hover > * {
+    transform: translateY(0.5vw);          /* applies a vertical translation effect on the selected child elements, moving them up by 0.5vw when their respective overlay is hovered over. This gives the effect of the child elements popping up and becoming more prominent when the user interacts with the overlay */
+}
+
+#topLeftHoverTitle, #bottomLeftHoverTitle, #topRightHoverTitle, #bottomRightHoverTitle {
+    display: block;                        /* elements will appear as a block-level element and take up the full width of their parent container */
+    font-size: 1.6vw;                      /* sets the font size of the elements to 1.6% of the viewport width. This means that the font size will scale relative to the size of the viewport */
+    text-decoration: underline;
+    margin-top: 0.4vh;                     /* here will be a small space between the top of the elements and the element above it    */
+}
+
+#topLeftHoverDescription, #bottomLeftHoverDescription, #topRightHoverDescription, #bottomRightHoverDescription {
+    font-size: 1vw;
+    text-align: center;
+    margin-top: 1vh;
+}
+
+#right {
+    display: flex;                         /* allows elements to be arranged in a flexible way in relation to each other and their container */
+    flex-direction: column;                /* sets the direction in which the flex items are placed inside the container to be in a vertical column */
+    justify-content: space-around;         /* distributes the available space in the container evenly around the items, with half of that space before the first item and the other half after the last item */
+    overflow: hidden;                      /* hides any content that overflows the container. If the content of the container is larger than the container itself, it will be clipped and not visible. This property is useful for hiding elements that exceed the boundaries of their container */
+}
+
+#topRight, #bottomRight {
+    margin: 0 auto;                        /* sets the top and bottom margins to 0, and the left and right margins to auto, centering the elements horizontally */
+    display: flex;                         /* elements to be positioned and aligned using flexbox properties */
+    align-items: center;                   /* centers the elements vertically within their container */
+    justify-content: center;
+    transition: 0.5em; 
+    pointer-events: none;                  /* disables pointer events on these elements, making them non-interactive */
+    right: -30vw;                          /* positions the elements 30vw (viewport width) to the left of their normal position, so that they are initially off-screen to the right */
+    position: relative;                    /* ets the position of the elements to relative, so that the right property can be used to move them horizontally */
+    opacity: 0;
+    animation: rightSlide 2s forwards;
+    animation-delay: 2.8s;                 
+}
+
+@keyframes intro {
+    100% {bottom: 0};
+    from {opacity: 0} to {opacity: 1};
+}
+
+@keyframes fadeIn {
+    from {opacity: 0} to {opacity: 1};
+}
+
+@keyframes leftSlide {
+    100% {left: 0};
+    from {opacity: 0} to {opacity: 1};
+}
+
+@keyframes rightSlide {
+    100% {right: 0};
+    from {opacity: 0} to {opacity: 1};
+}
+
+@keyframes appear {
+    from {opacity: 0} to {opacity: 1};
+}
+
+@font-face {
+    font-family: "Sedgwick";
+    src: url(../resources/Sedgwick.ttf);
+}
+
+@font-face {
+    font-family: "Nova";
+    src: url(../resources/Nova.ttf);
+}

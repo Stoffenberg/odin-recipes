@@ -1,0 +1,309 @@
+html {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    margin: 0;                       /* space between the edge of an element and the surrounding elements or the edge of the browser window */
+    background: linear-gradient(180deg, rgba(136,182,97,1) 0%, rgba(24,128,25,1) 40%) fixed; /* transition between two or more colors that creates a smooth color transition */
+    height: 100%;
+    overflow-anchor: none;           /* disables the anchor-based scrolling behavior. */
+}
+
+.imageLink {
+    display: flex;
+    justify-content: center;
+}
+
+.image {                             /* class selector that targets HTML elements with a class attribute of image */
+    position: absolute;              /* An absolutely positioned element is positioned relative to the nearest positioned ancestor element */
+    z-index: 2;                      /* specifies the stack order of the element. An element with a higher z-index will be displayed in front of an element with a lower z-index */
+    top: 17em;                       /* sets the distance between the top edge of the element and the top edge of its containing element  */
+    width: 10em;                     /* width of the element  */
+    height: 10em;
+    border-radius: 50%;              /* creates a circular border around the element by making the corner radius of each corner of the element half the element's width */
+    border: 0.6em double whitesmoke; /* creates a double border around the element with a thickness of 0.6em and a color of white */
+    background: linear-gradient(to bottom, white, black); /* sets the background of the element to a linear gradient that transitions from white at the top to black at the bottom */
+    background-size: cover;          /* specifies that the background image should cover the entire element, while maintaining its aspect ratio */
+    background-origin: border-box;   /* specifies that the background image should start from the border of the element */
+    box-shadow: 0 0 0px, black;    /* creates a black shadow around the element with no blur and no offset */
+    animation: expand 1s forwards, Down 0.75s 0.5s forwards, Up 1s 0.9s forwards; /* sets the animation property to three separate animations, each with its own duration, delay, and fill mode */
+    transform: scale(0.01);          /* scales the element down to a size of 0.01 before the animation begins */
+    transition: 0.3s;                /* specifies the duration of the transition effect when the element's CSS properties change */
+}
+
+.image:hover {
+    width: 11.5em;
+}
+
+.container {
+    position: relative;              /* element will be positioned relative to its normal position in the document flow */
+    top: 8em;                        /* element will be shifted 8em down from its normal position */
+    width: 45em;                     /* width of the element */
+    height: 102em;                   /* height of the element */
+    display: flex;                   /* element's children will be laid out as flexible boxes that can be easily positioned and sized */
+    justify-content: center;         /* centers the contents of the element horizontally along the main axis. This means that any child elements will be horizontally centered within the container */
+    align-items: center;             /* centers the contents of the element vertically along the cross axis. This means that any child elements will be vertically centered within the container */
+    border: 0.5em double whitesmoke; /* sets a border on the element */
+    margin: auto;                    /* enters the element horizontally by setting its left and right margins to auto */
+    box-sizing: border-box;          /* specifies that the element's width and height should include its border and padding */
+    border-radius: 1em;              /* corners of the element will be rounded */
+    background: rgb(59,59,59);     /* sets the background color of the element to a dark gray color */
+}
+
+.content {
+    position: absolute;              /* element will be positioned relative to the nearest positioned ancestor (if any) or the initial containing block */
+    width: 99%;
+    height: 99.5%;
+    box-sizing: border-box;
+    background: rgb(29,29,29);
+    border: double 0.2em transparent;
+    border-radius: 0.5em;
+    background-image: linear-gradient(rgb(26,26,26), rgb(26,26,26)), linear-gradient(to bottom, darkgreen, lightgreen);
+    background-origin: border-box;   /* background image should be positioned relative to the border box of the element */
+    background-clip: content-box, border-box; /* background image should be clipped to the content box and the border box of the element */
+}
+
+.underline {
+    position: absolute;
+    border-top: 1.4em solid whitesmoke;
+    border-bottom: 1.4em solid whitesmoke;
+    border-left: 1.4em solid transparent;
+    border-right: 1.4em solid transparent;
+    margin-top: 0em;
+    left: 50%;                       /* positions the left edge of the element at the center of its container. */
+    transform: translateX(-50%);     /* moves the element left by 50% of its own width, effectively centering it horizontally */
+    opacity: 0;                      /* sets the opacity of the element to 0, making it completely transparent */
+    animation: appear 0.9s 1.4s forwards, extend 1s 2.2s forwards;
+}
+
+.recipe {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 65%);     /* centers the element horizontally by moving it to the left by 50% of its own width */
+    margin-top: 1.5em;
+    font-size: 2em;                /* sets the font size of the text inside the element to 2.7 times the size of the parent element's font */
+    color: yellowgreen;
+    font-family: "Satisfy";
+    font-weight: normal;             /* sets the font weight of the text inside the element to normal */
+    opacity: 0;
+    animation: recipeAppear 1s 3s forwards; /* applies an animation to the element called recipeAppear that lasts for 1 second and starts 3 seconds after the page loads. The forwards keyword means that the final state of the animation is maintained after it completes */
+}
+
+.description {
+    position: relative;              /* positions the element relative to its normal position in the document flow */
+    color: white;
+    width: 90%;
+    margin: 10em auto 0 auto;        /* creates space around the element, with 10em of margin on top and no margin on the sides or bottom. The auto value centers the element horizontally */
+    font-family: "Lora";
+    opacity: 0;
+    animation: fadeIn 2s 3.5s forwards; /* applies an animation to the element called fadeIn that lasts for 2 seconds and starts 3.5 seconds after the page loads */
+}
+
+.info {
+    width: 70%;                      /* sets the width of the element to 70% of its container's width */
+    height: 2.5em;                   /* sets the height of the element to 2.5em (which is equivalent to 2.5 times the height of the element's font size) */
+    margin: 1em auto 0 auto;         /* sets the margin of the element to 1em on the top and 0 on the bottom and horizontally centers the element using the auto value */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;   /* evenly distributes the flex items along the main axis with equal spacing between them */
+    border: 0.25em double whitesmoke; /* sets the border of the element to a double line with a width of 0.25em and a color of white */
+    border-radius: 2em;              /* rounds the corners of the element's border to 2em (which is equivalent to twice the element's height) */
+}
+
+.thymeContainer {
+    display: flex;                   /* sets the container to use flexbox layout, which allows flexible sizing and positioning of child elements */
+    align-items: center;             /* aligns the items along the cross-axis (vertically in this case) to the center */
+    width: 20%;                      /* sets the width of the container to 20% of its parent container's width */
+    margin-left: -1em;               /* This sets a negative margin of 1em to the left of the container, effectively shifting it to the left by 1em */
+    height: 70%;
+    justify-content: space-between;  /* aligns the items along the main-axis (horizontally in this case) to be evenly spaced with equal space between them */
+}
+
+.clockContainer {
+    position: absolute;              /* ets the position of the element to be relative to its nearest positioned ancestor, in this case, probably the parent element, and removes it from the normal document flow */
+    display: flex;                   /* defines a flex container, enabling flexbox layout for the element's contents */
+    flex-direction: row;             /* sets the direction in which flex items are placed in the container. In this case, it specifies that they should be laid out in a horizontal row from left to right */
+    width: 4.5%;                     /* sets the width of the element to 4.5% of its containing block. Element will take up 4.5% of the width of its parent element */
+}
+
+.thyme {
+    position: absolute;
+    left: 28%;
+    color: lightgreen;
+    font-family: "Delicious Handrawn";
+    font-size: 1.2em;
+}
+
+.separator {
+    position: absolute;              /* positions the element absolutely with respect to its nearest positioned ancestor. It is taken out of the normal flow of the document and positioned relative to its parent element */
+    box-sizing: border-box;          /* changes the box model used to calculate the width and height of the element. With border-box, the width and height of the element include the padding and border, but not the margin */
+    border: 0.1em solid whitesmoke; /* sets the border of the element to a solid white line with a thickness of 0.1em */
+    height: 10%;                     /* sets the height of the element to 10% of its parent container's height */
+}
+
+.servingsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;   /* evenly spaces out the child elements horizontally within the container */
+    flex-direction: row;
+    width: 6.6em;
+    margin-left: 5em;
+}
+
+.servings {
+    color: lightgreen;
+    font-family: "Delicious Handrawn";
+    font-size: 1.2em;
+}
+
+.servingsAmount {
+    font-size: 1.2em;
+    color: lightgreen;
+    font-family: "Delicious Handrawn";
+}
+
+.ingredientsContainer, .instructionsContainer, .nutritionContainer {
+    position: relative;              /* sets the position of each container to be relative to its parent element */
+    display: flex;                   /* sets the display type of each container to flex, which allows the items within the container to be positioned and aligned easily */
+    justify-content: center;         /* aligns the content within each container along the horizontal axis to the center */
+    align-items: center;
+    flex-direction: column;          /* sets the direction of the flex container to be column, which stacks the items within the container vertically */
+    margin-top: 3em; 
+}
+
+.ingredientsDeco, .instructionsDeco, .nutritionDeco {
+    top: 0;                          /* Sets the top position of the element to the top of its parent container */
+    height: 0;                       /* Sets the height of the element to 0, so that it doesn't take up any space */
+    border-top: 0.8em solid whitesmoke;
+    border-bottom: 0.8em solid whitesmoke;
+    border-left: 0.8em solid transparent; /* Sets a transparent border on the left of the element, creating a diagonal shape with the top and bottom borders */
+    border-right: 0.8em solid transparent; /* Sets a transparent border on the right of the element, completing the diagonal shape */
+    opacity: 0;                      /* Sets the initial opacity of the element to 0, making it invisible */
+    animation: fadeIn 1s 4s forwards, subExtend 1s 4.5s forwards; /* Applies two animations to the element. The first animation, fadeIn, gradually increases the opacity of the element to 1 over a duration of 1 second, starting after a delay of 4 seconds. The second animation, subExtend, gradually increases the height of the element to 0.8em over a duration of 1 second, starting after a delay of 4.5 seconds */
+}
+
+.ingredientsText, .instructionsText, .nutritionText {
+    position: absolute;              /* sets the element's position relative to its nearest positioned ancestor (if any) or to the initial containing block */
+    font-size: 1.2em;                
+    font-family: "Lora";
+    color: green;
+    top: -0.1em;                    /* positions the element 0.15em above its original position */
+    opacity: 0;
+    animation: fadeIn 1s 5s forwards; /* 'forwards' keyword specifies that the animation should retain the property values from the final keyframe after it ends */
+}
+
+.ingredientsList {
+    color: white;
+    width: 90%;
+    font-family: "Lora";
+    line-height: 1.4em;              /* sets the height of each line of text to 1.4 times the size of the font used */
+    margin: 0.5em 0 1em 0;            /* sets the top margin to 0.5em, the right and left margins to 0, and the bottom margin to 1em */
+    opacity: 0;
+    animation: fadeIn 2s 5.5s forwards; /* applies a CSS animation called fadeIn with a duration of 2 seconds and a delay of 5.5 seconds */
+}
+
+.instructionsSteps {
+    color: white;
+    width: 90%;
+    font-family: "Lora";
+    margin-top: 1em;
+    opacity: 0;
+    animation: fadeIn 2s 5.5s forwards;
+}
+
+.instructionsSteps li {
+    margin-bottom: 1.5em;
+}
+
+.nutritionCase {
+    display: flex;
+    flex-direction: row;              /* child elements will be positioned horizontally, side by side */
+    width: 80%;
+    height: 100%;
+    margin-top: 2em;
+    opacity: 0;
+    animation: fadeIn 2s 5.5s forwards;
+    align-items: center;
+    justify-content: center;
+}
+
+.nutrition {
+    color: white;
+    list-style-type: none;           /* removes the bullet points that usually appear next to each list item */
+    color: mediumseagreen;
+    font-family: "Changa";
+    line-height: 1.3em;
+}
+
+.nutritionInfo {
+    color: white;
+    list-style-type: none;
+    font-family: "Lora";
+    font-size: 0.85em;
+    margin-left: 2.5em;
+    line-height: 1.7em;
+}
+
+.nutrition li {
+    margin-bottom: 0.67em;
+}
+
+.nutritionInfo li {
+    margin-bottom: 0.7em;
+}
+
+@keyframes expand {
+    from {transform: scale(0.01)} to {transform: scale(1)};
+}
+
+@keyframes Down {
+    100% {top: 19em};
+}
+
+@keyframes Up {
+    100% {top: -7em};
+    from {box-shadow: 0 0 0px black} to {box-shadow: 0 0 2.5em black};
+}
+
+@keyframes appear {
+    from {opacity: 0} to {opacity: 1};
+    from {margin-top: 0em} to {margin-top: 6em};
+}
+
+@keyframes extend {
+    from {width: 0%} to {width: 70%};
+}
+
+@keyframes subExtend {
+    from {width: 0%} to {width: 50%};
+}
+
+@keyframes fadeIn {
+    from {opacity: 0} to {opacity: 1};
+}
+
+@keyframes recipeAppear {
+    from {margin-top: 1.5em} to {margin-top: 1.9em};
+    from {opacity: 0} to {opacity: 1};
+}
+
+@font-face {
+    font-family: "Satisfy";
+    src: url(../resources/Satisfy-Regular.ttf)
+}
+
+@font-face {
+    font-family: "Delicious Handrawn";
+    src: url(../resources/DeliciousHandrawn-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Lora";
+    src: url(../resources/Lora-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "Changa";
+    src: url(../resources/Changa-VariableFont_wght.ttf);
+}

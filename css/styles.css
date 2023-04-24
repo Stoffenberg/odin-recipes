@@ -1,0 +1,55 @@
+body {
+background-color: black;
+color: white;
+}
+
+p {
+color: chartreuse;
+text-align: center;
+}
+
+h1 {
+    font-family: "Montserrat";
+    font-size: 40px;
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin: auto;
+}
+
+span {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.bulk {
+    font-weight: bold;
+    font-style: normal;
+}
+
+.thin {
+    font-style: italic;
+    font-weight: normal;
+}
+
+.table {
+    background-color: rgb(12, 218, 12);
+    width: 100px;
+
+    margin: 20px;
+    border-width: 3px;
+    border-color: whitesmoke;
+    border-style: solid;
+    padding: 10px;
+    
+}
+
+.boxes {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    margin: 40px;
+}
+

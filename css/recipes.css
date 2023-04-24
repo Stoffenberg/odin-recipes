@@ -1,0 +1,308 @@
+html {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(180deg, rgba(190, 162, 90, 1) 0%, rgba(116, 87, 10, 1) 40%) fixed;
+    height: 100%;
+    overflow-anchor: none;
+}
+
+.imageLink {
+    display: flex;
+    justify-content: center;
+}
+
+.image {
+    position: absolute;
+    z-index: 2;
+    top: 17em;
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    border: 0.6em double whitesmoke;
+    background: linear-gradient(to bottom, white, black);
+    background-size: cover;
+    background-origin: border-box;
+    box-shadow: 0 0 0px, black;
+    animation: expand 1s forwards, Down 0.75s 0.5s forwards, Up 1s 0.9s forwards;
+    transform: scale(0.01);
+    transition: 0.3s;
+}
+
+.image:hover {
+    width: 11.5em;
+}
+
+.container {
+    position: relative;
+    top: 8em;
+    width: 45em;
+    height: 87em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.5em double whitesmoke;
+    margin: auto;
+    box-sizing: border-box;
+    border-radius: 1em;
+    background: rgb(59,59,59);  
+}
+
+.content {
+    position: absolute;
+    width: 99%;
+    height: 99.5%;
+    box-sizing: border-box;
+    background: rgb(29,29,29);
+    border: double 0.2em transparent;
+    border-radius: 0.5em;
+    background-image: linear-gradient(rgb(26,26,26), rgb(26,26,26)), linear-gradient(to bottom, yellow, goldenrod);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+.underline {
+    position: absolute;
+    border-top: 1.4em solid whitesmoke;
+    border-bottom: 1.4em solid whitesmoke;
+    border-left: 1.4em solid transparent;
+    border-right: 1.4em solid transparent;
+    margin-top: 0em;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: appear 0.9s 1.4s forwards, extend 1s 2.2s forwards;
+}
+
+.recipe {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 70%);
+    margin-top: 1.5em;
+    font-size: 2em;
+    color: darkorange;
+    font-family: "Satisfy";
+    font-weight: normal;
+    opacity: 0;
+    animation: recipeAppear 1s 3s forwards;
+}
+
+.description {
+    position: relative;
+    color: white;
+    width: 90%;
+    margin: 10em auto 0 auto;
+    font-family: "Lora";
+    opacity: 0;
+    animation: fadeIn 2s 3.5s forwards;
+}
+
+.info {
+    width: 70%;
+    height: 2.5em;
+    margin: 1em auto 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 0.25em double whitesmoke;
+    border-radius: 2em;
+}
+
+.thymeContainer {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    margin-left: -1em;
+    height: 70%;
+    justify-content: space-between;
+}
+
+.clockContainer {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    width: 4.5%;
+}
+
+.thyme {
+    position: absolute;
+    left: 28%;
+    color: yellow;
+    font-family: "Delicious Handrawn";
+    font-size: 1.2em;
+}
+
+.separator {
+    position: absolute;
+    box-sizing: border-box;
+    border: 0.1em solid whitesmoke;
+    height: 10%;
+}
+
+.servingsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 6.6em;
+    margin-left: 5em;
+}
+
+.servings {
+    color: yellow;
+    font-family: "Delicious Handrawn";
+    font-size: 1.2em;
+}
+
+.servingsAmount {
+    font-size: 1.2em;
+    color: yellow;
+    font-family: "Delicious Handrawn";
+}
+
+.ingredientsContainer, .instructionsContainer, .nutritionContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 3em;
+}
+
+.ingredientsDeco, .instructionsDeco, .nutritionDeco {
+    top: 0;
+    height: 0;
+    border-top: 0.8em solid whitesmoke;
+    border-bottom: 0.8em solid whitesmoke;
+    border-left: 0.8em solid transparent;
+    border-right: 0.8em solid transparent;
+    opacity: 0;
+    animation: fadeIn 1s 4s forwards, subExtend 1s 4.5s forwards;
+}
+
+.ingredientsText, .instructionsText, .nutritionText {
+    position: absolute;
+    font-size: 1.2em;
+    font-family: "Lora";
+    color: darkorange;
+    top: -0.1em;
+    opacity: 0;
+    animation: fadeIn 1s 5s forwards;
+}
+
+.ingredientsList {
+    color: white;
+    width: 90%;
+    font-family: "Lora";
+    line-height: 1.4em;
+    margin: 0.5em 0 1em 0;
+    opacity: 0;
+    animation: fadeIn 2s 5.5s forwards;
+}
+
+.instructionsSteps {
+    color: white;
+    width: 90%;
+    font-family: "Lora";
+    margin-top: 1em;
+    opacity: 0;
+    animation: fadeIn 2s 5.5s forwards;
+}
+
+.instructionsSteps li {
+    margin-bottom: 1.5em;
+}
+
+.nutritionCase {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 100%;
+    margin-top: 2em;
+    opacity: 0;
+    animation: fadeIn 2s 5.5s forwards;
+    align-items: center;
+    justify-content: center;
+}
+
+.nutrition {
+    color: white;
+    list-style-type: none;
+    color: yellow;
+    font-family: "Changa";
+    line-height: 1.3em;
+}
+
+.nutritionInfo {
+    color: white;
+    list-style-type: none;
+    font-family: "Lora";
+    font-size: 0.85em;
+    margin-left: 2.5em;
+    line-height: 1.7em;
+}
+
+.nutrition li {
+    margin-bottom: 0.67em;
+}
+
+.nutritionInfo li {
+    margin-bottom: 0.7em;
+}
+
+@keyframes expand {
+    from {transform: scale(0.01)} to {transform: scale(1)};
+}
+
+@keyframes Down {
+    100% {top: 19em};
+}
+
+@keyframes Up {
+    100% {top: -7em};
+}
+
+@keyframes appear {
+    from {opacity: 0} to {opacity: 1};
+    from {margin-top: 0} to {margin-top: 6em};
+}
+
+@keyframes extend {
+    from {width: 0} to {width: 70%};
+}
+
+@keyframes subExtend {
+    from {width: 0} to {width: 50%};
+}
+
+@keyframes fadeIn {
+    from {opacity: 0} to {opacity: 1};
+}
+
+@keyframes recipeAppear {
+   from {opacity: 0} to {opacity: 1};
+   from {margin-top: 1.5em} to {margin-top: 1.9em};
+}
+
+@font-face {
+    font-family: "Satisfy";
+    src: url(../resources/Satisfy-Regular.ttf)
+}
+
+@font-face {
+    font-family: "Delicious Handrawn";
+    src: url(../resources/DeliciousHandrawn-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Lora";
+    src: url(../resources/Lora-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "Changa";
+    src: url(../resources/Changa-VariableFont_wght.ttf);
+}
